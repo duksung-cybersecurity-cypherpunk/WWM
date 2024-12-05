@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <script src="\javascripts\jquery-3.7.1.min.js"></script>
+    
+    <!-- Favicons -->
+    <link href="/images/메인 아이콘.jpg" rel="icon">
+    <link href="/images/메인 아이콘.jpg">
+
+
+    <script>
+    $(function () {
+        $("#password_eq").hide();
+        $("#password_neq").hide();
+        $("#r_pw").keyup(function () {
+           let firstPw = $("#up_pw").val();
+           let secondPw = $("#r_pw").val();
+           if (firstPw != "" || secondPw != "") {
+            if (firstPw == secondPw) {
+              $("#password_eq").show();
+              $("#password_neq").hide();
+              $(".access").removeAttr("disabled");
+            }
+            else {
+              $("#password_eq").hide();
+              $("#password_neq").show();
+              $(".access").attr("disabled", "disabled");
+            }
+           }
+       });
+      })
+    </script>
+</head>
+<body>
+  
+    <section id="about" class="about section-bg">
+        <div class="container">
+          <div class="login-wrap">
+            <div class="login-html">
+              
+                <input id="tab-1" type="radio" name="tab" class="sign-in" ><label for="tab-1" class="tab"><a href="/users/modi">회원정보</a></label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab"><a href="/users/repreferences">기본정보</a></label>
+              
+            <div class="login-form">
+              
+                  <form action="/users/repreferences" method="post" onsubmit="return repreferences();" >
+                  <div class="sign-up-htm">
+                    <div class="group">
+                      <label for="user" class="label">이름</label>
+                      <input id="M_name" type="text" class="input" name="name">
+                    </div>
+                    <div class="group">
+                      <label for="pass" class="label">나이</label>
+                      <input id="M_age" type="text" class="input" name="age">
+                    </div>
+                    <div class="group">
+                      <label for="pass" class="label">거주 지역</label>
+                      <input id="M_city" type="text" class="input" name="city">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">건강 상태</label>
+                        <input id="M_state" type="text" class="input" name="healthcondition">
+                      </div>
+                    <div class="group">
+                        <label for="pass" class="label">평균 운동 시간</label>
+                        <input id="M_time" type="text" class="input" name="exerciseTime">
+                    </div>
+                    <div class="group">
+                      <input type="submit" class="button" value="Modification" id="sign-up" style="color:black" >
+                    </div>
+                    <div class="hr"></div>
+                    <!-- <div class="foot-lnk">
+                      <label for="tab-1">Already Member?</a>
+                    </div> -->
+                  </div>
+                </form>
+              </div>
+            </div>
+      </section>
+
+</body>
+<script src="/javascripts/ain.js"></script>
+</html>
