@@ -23,4 +23,5 @@
 - Node.js
 - Html, Css, Js
 - Mysql
+- MediaPipe
 
